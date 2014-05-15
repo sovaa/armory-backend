@@ -1,0 +1,23 @@
+h1 Listing creatures
+
+table
+  thead
+    tr
+      th Name
+      th Health
+      th
+      th
+      th
+
+  tbody
+    - @creatures.each do |creature|
+      tr
+        td = creature.name
+        td = creature.health
+        td = link_to 'Show', creature
+        td = link_to 'Edit', edit_creature_path(creature)
+        td = link_to 'Destroy', creature, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Creature', new_creature_path

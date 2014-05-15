@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @creature.name
+p
+  strong Health:
+  = @creature.health
+
+= link_to 'Edit', edit_creature_path(@creature)
+'|
+= link_to 'Back', creatures_path

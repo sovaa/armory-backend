@@ -1,0 +1,15 @@
+= form_for @creature do |f|
+  - if @creature.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@creature.errors.count, "error")} prohibited this creature from being saved:"
+      ul
+        - @creature.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :health
+    = f.text_field :health
+  .actions = f.submit 'Save'
