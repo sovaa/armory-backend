@@ -1,0 +1,18 @@
+= form_for @version do |f|
+  - if @version.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@version.errors.count, "error")} prohibited this version from being saved:"
+      ul
+        - @version.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :database
+    = f.text_field :database
+  .field
+    = f.label :app
+    = f.text_field :app
+  .field
+    = f.label :backend
+    = f.text_field :backend
+  .actions = f.submit 'Save'
