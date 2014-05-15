@@ -1,4 +1,4 @@
 armory-backend
 ==============
 
-Backend for Entropia Armory app
+Backend for Entropia Armory app.
