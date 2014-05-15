@@ -5,11 +5,20 @@ class CreaturesController < ApplicationController
   # GET /creatures.json
   def index
     @creatures = Creature.all
+    respond_to do |format|
+      format.html { render json: @creatures }
+      format.json { render json: @creatures }
+    end
   end
 
   # GET /creatures/1
   # GET /creatures/1.json
   def show
+    @creature = set_creature
+    respond_to do |format|
+      format.html { render json: @creature }
+      format.json { render json: @creature }
+    end
   end
 
   # GET /creatures/new

@@ -1,5 +1,5 @@
 class Creature
   include Mongoid::Document
   field :name, type: String
-  field :health, type: Int
+  field :health, type: Integer
 end
